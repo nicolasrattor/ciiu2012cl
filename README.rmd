@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+# ciiu2012cl
+
+Paquete R muy simple y en desarrollo para trabajar con el Clasificador Internacional Industrial Uniforme (CIIU) 2012 ajustado para Chile.
+
+# Instalar y cargar paquete
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("nicolasrattor/ciiu2012cl")
+```
+
+```{r}
+library(ciiu2012cl)
+```
+
+
+# Uso del paquete
+
+## Obtener glosas segun dígitos
+
+Obtener todas las secciones de CIIU (1 dígito)
+
+```{r eval=FALSE}
+ciiu_digitos(1)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+ciiu_digitos(1) %>% knitr::kable()
+```
+
+
+También se pueden obtener divisiones (2 dígitos), grupo (3 dígitos), clase (4 dígitos) y subclase (5 dígitos).
+
+```{r eval=FALSE}
+ciiu_digitos(2)
+ciiu_digitos(3)
+ciiu_digitos(4)
+ciiu_digitos(5)
+```
+
+
+## Obtener todos los elementos dentro de una letra
+
+Obtener para una letra todas las divisiones, grupos, clases y subclases.
+
+Sección R, por ejemplo
+
+```{r eval=FALSE}
+ciiu2012cl::ciiu_consulta("R")
+```
+
+
+## Obtener solo las divisiones (2 dígitos) dentro de letra
+
+```{r}
+ciiu2012cl::division("R")
+```
+
+Pendiente desarrollar para las otras desagregaciones. 
+
+## Buscar palabra
+
+```{r}
+ciiu2012cl::ciiu_glosa(buscar="calzado")
+```
+
+
+## obtener toda la ciiu
+
+También se puede necesitar guardar la ciiu completa como data frame
+
+```{r}
+ciiu <- ciiu_consulta()
+table(ciiu$seccion)
+```
+
