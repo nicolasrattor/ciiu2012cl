@@ -23,7 +23,6 @@ ciiu_consulta <- function(let=NA_character_,
                  gru=NA_character_,
                  cla=NA_character_,
                  sub=NA_character_){
-  load("~/Github/ciiu2012cl/R/sysdata.rda")
   base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(let)){
     dplyr::filter(base,seccion==let)

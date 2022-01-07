@@ -20,7 +20,6 @@
 #' ciiu_digitos(6)
 #'
 ciiu_digitos <- function(digitos=NA_real_){
-  load("~/Github/ciiu2012cl/R/sysdata.rda")
   base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(is.na(digitos)){
     base

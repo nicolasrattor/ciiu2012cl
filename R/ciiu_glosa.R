@@ -20,7 +20,6 @@ ciiu_glosa <- function(let=NA_character_,
                  cla=NA_character_,
                  sub=NA_character_,
                  buscar=""){
-  load("~/Github/ciiu2012cl/R/sysdata.rda")
   base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
   base$glosa_low <- tolower(base$glosa)
   if(!is.na(let)){

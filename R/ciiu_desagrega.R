@@ -18,7 +18,6 @@
 
 
 division <- function(letra=NA_character_){
-  load("~/Github/ciiu2012cl/R/sysdata.rda")
   base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(letra)){
     base <- dplyr::filter(dplyr::filter(base,seccion==letra),
