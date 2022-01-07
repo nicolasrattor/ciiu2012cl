@@ -61,7 +61,6 @@ ciiu2012cl::ciiu_consulta("R")
 ciiu2012cl::division("R")
 ```
 
-Pendiente desarrollar para las otras desagregaciones. 
 
 ## Buscar palabra
 
@@ -70,9 +69,9 @@ ciiu2012cl::ciiu_glosa(buscar="calzado")
 ```
 
 
-## obtener toda la ciiu
+## Obtener toda la CIIU
 
-También se puede necesitar guardar la ciiu completa como data frame
+También se puede necesitar guardar la CIIU completa como data frame
 
 ```{r}
 ciiu <- ciiu_consulta()

@@ -10,6 +10,15 @@
 #' @return Una tibble con las glosas según desglose solicitado
 #' @export
 #'
+#' @examples
+#' ciiu_digitos()
+#' ciiu_digitos(1)
+#' ciiu_digitos(2)
+#' ciiu_digitos(3)
+#' ciiu_digitos(4)
+#' ciiu_digitos(5)
+#' ciiu_digitos(6)
+#'
 ciiu_digitos <- function(digitos=NA_real_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")
   base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
@@ -34,11 +43,4 @@ ciiu_digitos <- function(digitos=NA_real_){
   }
 }
 
-ciiu_digitos()
-ciiu_digitos(1)
-ciiu_digitos(2)
-ciiu_digitos(3)
-ciiu_digitos(4)
-ciiu_digitos(5)
-ciiu_digitos(6)
 

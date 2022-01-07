@@ -1,19 +1,21 @@
 
 #' Funciones para lidiar con meses
 #'
-#' La función retorna todos los elementos contenidos en la desagregación
-#' consultada.
+#' En desarrollo
 #'
 #'
 #'
-#' @param let Path to the input file
-#' @return A matrix of the infile
+#'
+#' @param
+#' @return
 #' @export
+#'
+#' @examples
+#' ene3_to_n_meses(data,data$mes)
 
 ene3_to_n_meses <- function(x,y){
-  ene <- ene %>% mutate(mes=tolower(substr(mes,1,3)))
-  ene <- arreglarmes(ene,ene$mes)
-  x <- dplyr::mutate(x,mes=case_when(y == "ene" ~ 2,
+  ene <- dplyr::mutate(x,y=tolower(substr(y,1,3)))
+  x <- dplyr::mutate(x,mes=dplyr::case_when(y == "ene" ~ 2,
                                   y == "feb" ~ 3,
                                   y == "mar" ~ 4,
                                   y == "abr" ~ 5,
@@ -25,10 +27,11 @@ ene3_to_n_meses <- function(x,y){
                                   y == "oct" ~ 11,
                                   y == "nov" ~ 12,
                                   y == "dic" ~ 1))
+  x
 }
 
 espanol_to_n_meses <- function(x,y){
-  x <- dplyr::mutate(x,mes=case_when(y == "ene" ~ 1,
+  x <- dplyr::mutate(x,mes=dplyr::case_when(y == "ene" ~ 1,
                                   y == "feb" ~ 2,
                                   y == "mar" ~ 3,
                                   y == "abr" ~ 4,
@@ -40,4 +43,5 @@ espanol_to_n_meses <- function(x,y){
                                   y == "oct" ~ 10,
                                   y == "nov" ~ 11,
                                   y == "dic" ~ 12))
+  x
 }

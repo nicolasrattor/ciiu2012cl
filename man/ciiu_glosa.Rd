@@ -14,12 +14,15 @@ ciiu_glosa(
 )
 }
 \arguments{
-\item{let}{Path to the input file}
+\item{buscar}{Palabra a buscar en glosas}
 }
 \value{
-A matrix of the infile
+tablas con todas las desagregaciones cuyas glosas coinciden con lo buscado
 }
 \description{
-La función retorna todos los elementos contenidos en la desagregación
-consultada.
+Buscar glosas CIIU 2012 con palabras claves
+}
+\examples{
+ciiu_glosa(buscar="Agro")
+ciiu_glosa(let="G",buscar="Agro")
 }

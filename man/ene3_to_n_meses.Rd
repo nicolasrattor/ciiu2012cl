@@ -6,13 +6,12 @@
 \usage{
 ene3_to_n_meses(x, y)
 }
-\arguments{
-\item{let}{Path to the input file}
-}
 \value{
-A matrix of the infile
+
 }
 \description{
-La función retorna todos los elementos contenidos en la desagregación
-consultada.
+En desarrollo
+}
+\examples{
+ene3_to_n_meses(data,data$mes)
 }

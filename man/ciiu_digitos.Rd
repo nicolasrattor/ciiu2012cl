@@ -16,3 +16,13 @@ Una tibble con las glosas según desglose solicitado
 La función retorna todos los elementos contenidos en la desagregación
 consultada.
 }
+\examples{
+ciiu_digitos()
+ciiu_digitos(1)
+ciiu_digitos(2)
+ciiu_digitos(3)
+ciiu_digitos(4)
+ciiu_digitos(5)
+ciiu_digitos(6)
+
+}

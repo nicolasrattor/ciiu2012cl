@@ -1,14 +1,18 @@
 
 #' Buscar glosas CIIU 2012 con palabras claves
 #'
-#' La función retorna todos los elementos contenidos en la desagregación
-#' consultada.
 #'
 #'
 #'
-#' @param let Path to the input file
-#' @return A matrix of the infile
+#'
+#'
+#' @param buscar Palabra a buscar en glosas
+#' @return tablas con todas las desagregaciones cuyas glosas coinciden con lo buscado
 #' @export
+#'
+#' @examples
+#' ciiu_glosa(buscar="Agro")
+#' ciiu_glosa(let="G",buscar="Agro")
 
 ciiu_glosa <- function(let=NA_character_,
                  div=NA_character_,
@@ -40,15 +44,5 @@ ciiu_glosa <- function(let=NA_character_,
   }
 }
 
-ciiu_glosa()
-ciiu_glosa("G")
-ciiu_glosa(div="47")
-ciiu_glosa(gru="472")
-ciiu_glosa(cla="4719")
-ciiu_glosa(sub="47199")
-
-ciiu_glosa(buscar="Agro")
-
-ciiu_glosa(let="G",buscar="Agro")
 
 

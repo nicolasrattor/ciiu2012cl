@@ -2,17 +2,22 @@
 % Please edit documentation in R/ciiu_desagrega.R
 \name{division}
 \alias{division}
-\title{Consultar CIIU 2012}
+\title{Buscar desagregaciones CIIU 2012 dentro de letras}
 \usage{
-division(let = NA_character_)
+division(letra = NA_character_)
 }
 \arguments{
-\item{let}{Path to the input file}
+\item{letra}{Sección a desagregar. Como carácter.}
 }
 \value{
-A matrix of the infile
+Tabla con número de la desagregación buscada y glosa
 }
 \description{
-La función retorna todos los elementos contenidos en la desagregación
-consultada.
+Cuatro funciones que retornas divisiones, grupos, clases o subclases dentro de una sección o letra de CIIU 2012.cl
+}
+\examples{
+division("C")
+grupo("C")
+clase("C")
+subclase("C")
 }

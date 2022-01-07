@@ -12,13 +12,10 @@ ciiu_consulta(
   sub = NA_character_
 )
 }
-\arguments{
-\item{let}{Path to the input file}
-}
 \value{
 A matrix of the infile
 }
 \description{
 La función retorna todos los elementos contenidos en la desagregación
-consultada.
+consultada. Se puede filtrar por letra, división, grupo, clase o subclase
 }

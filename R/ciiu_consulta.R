@@ -2,13 +2,21 @@
 #' Consultar CIIU 2012
 #'
 #' La función retorna todos los elementos contenidos en la desagregación
-#' consultada.
+#' consultada. Se puede filtrar por letra, división, grupo, clase o subclase
 #'
 #'
 #'
-#' @param let Path to the input file
+#' @param letra
 #' @return A matrix of the infile
 #' @export
+#'
+#' #' @examples
+#' ciiu_consulta()
+#' ciiu_consulta("G")
+#' ciiu_consulta(div="47")
+#' ciiu_consulta(gru="472")
+#' ciiu_consulta(cla="4719")
+#' ciiu_consulta(sub="47199")
 
 ciiu_consulta <- function(let=NA_character_,
                  div=NA_character_,
@@ -32,10 +40,5 @@ ciiu_consulta <- function(let=NA_character_,
   }
 }
 
-ciiu_consulta()
-ciiu_consulta("G")
-ciiu_consulta(div="47")
-ciiu_consulta(gru="472")
-ciiu_consulta(cla="4719")
-ciiu_consulta(sub="47199")
+
 
