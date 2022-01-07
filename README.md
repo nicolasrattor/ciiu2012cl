@@ -75,15 +75,13 @@ ciiu2012cl::ciiu_consulta("R")
 ciiu2012cl::division("R")
 ```
 
-    ## # A tibble: 4 x 6
-    ##   seccion division grupo clase subclase glosa                                   
-    ##   <chr>   <chr>    <chr> <chr> <chr>    <chr>                                   
-    ## 1 R       90       <NA>  <NA>  <NA>     Actividades creativas, artísticas y de ~
-    ## 2 R       91       <NA>  <NA>  <NA>     Actividades de bibliotecas, archivos y ~
-    ## 3 R       92       <NA>  <NA>  <NA>     Actividades de juegos de azar y apuestas
-    ## 4 R       93       <NA>  <NA>  <NA>     Actividades deportivas, de esparcimient~
-
-Pendiente desarrollar para las otras desagregaciones.
+    ## # A tibble: 4 x 3
+    ##   seccion division glosa                                                        
+    ##   <chr>   <chr>    <chr>                                                        
+    ## 1 R       90       Actividades creativas, artísticas y de entretenimiento       
+    ## 2 R       91       Actividades de bibliotecas, archivos y museos y otras activi~
+    ## 3 R       92       Actividades de juegos de azar y apuestas                     
+    ## 4 R       93       Actividades deportivas, de esparcimiento y recreativas
 
 ## Buscar palabra
 
@@ -106,9 +104,9 @@ ciiu2012cl::ciiu_glosa(buscar="calzado")
     ## 10 S       95       952   9523  <NA>     Reparación de calzado y de artículos d~
     ## 11 S       95       952   9523  95230    Reparación de calzado y de artículos d~
 
-## obtener toda la ciiu
+## Obtener toda la CIIU
 
-También se puede necesitar guardar la ciiu completa como data frame
+También se puede necesitar guardar la CIIU completa como data frame
 
 ``` r
 ciiu <- ciiu_consulta()
