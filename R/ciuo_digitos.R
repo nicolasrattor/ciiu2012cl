@@ -12,26 +12,29 @@
 #'
 
 ciuo_digitos <- function(digitos=NA_real_){
-  ciuo <- dplyr::rename(ciuo,glosa=titulo_sp)
   if(is.na(digitos)){
-    ciuo
+    ciuo[,c(1:5)]
   } else if(digitos=="iricmo"){
-    ciuo <- ciuo[ciuo$ciuo_08_code %in% c("1","2","3","4","51","52","7","8","9"),]
+    ciuo <- ciuo[ciuo$gran_grupo %in% c("1","2","3","4","5","7","8","9")&
+                   (is.na(ciuo$subgrupo_principal)|ciuo$subgrupo_principal=="51"|
+                      ciuo$subgrupo_principal=="52")&
+                   ciuo$glosa!="Trabajadores de los servicios y vendedores de comercios y mercados",]
+    ciuo <- ciuo[is.na(ciuo$subgrupo),c(1,5)]
     ciuo$grupo <- c(1:9)
-    ciuo$ciuo_08_code <- NULL
+    ciuo$gran_grupo <- NULL
     ciuo
   } else if(digitos==1){
-    ciuo$nivel <- nchar(ciuo$ciuo_08_code)
-    dplyr::select(ciuo[ciuo$nivel==digitos,],-nivel)
+    ciuo[is.na(ciuo$subgrupo_principal)&is.na(ciuo$subgrupo)&
+           is.na(ciuo$grupo_primario),c("gran_grupo","glosa")]
   } else if(digitos==2){
-    ciuo$nivel <- nchar(ciuo$ciuo_08_code)
-    dplyr::select(ciuo[ciuo$nivel==digitos,],-nivel)
+    ciuo[is.na(ciuo$subgrupo)&
+           is.na(ciuo$grupo_primario)&
+           !is.na(ciuo$subgrupo_principal),c("subgrupo_principal","glosa")]
   } else if(digitos==3){
-    ciuo$nivel <- nchar(ciuo$ciuo_08_code)
-    dplyr::select(ciuo[ciuo$nivel==digitos,],-nivel)
+    ciuo[is.na(ciuo$grupo_primario)&
+             !is.na(ciuo$subgrupo),c("subgrupo","glosa")]
   } else if(digitos==4){
-    ciuo$nivel <- nchar(ciuo$ciuo_08_code)
-    dplyr::select(ciuo[ciuo$nivel==digitos,],-nivel)
+    ciuo[!is.na(ciuo$grupo_primario),c("grupo_primario","glosa")]
   } else{
     print("Incorrecto número de digitos. Coloque 1, 2, 3, 4 o iricmo")
   }
