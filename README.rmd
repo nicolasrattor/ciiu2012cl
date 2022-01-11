@@ -78,3 +78,13 @@ ciiu <- ciiu_consulta()
 table(ciiu$seccion)
 ```
 
+## Extra: ocupaciones desde CIUO-08
+
+También se puede acceder a la CIUO
+
+```{r}
+ciuo_digitos(1)
+ciuo_digitos("iricmo")
+```
+
+

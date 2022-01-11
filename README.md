@@ -118,3 +118,42 @@ table(ciiu$seccion)
     ## 101  50 378  14  27  35 116  72  23  75  53   9  50  79  21  22  35  31  45  12 
     ##   U 
     ##   5
+
+## Extra: ocupaciones desde CIUO-08
+
+También se puede acceder a la CIUO
+
+``` r
+ciuo_digitos(1)
+```
+
+    ## # A tibble: 10 x 2
+    ##    ciuo_08_code glosa                                                           
+    ##    <chr>        <chr>                                                           
+    ##  1 1            Directores y gerentes                                           
+    ##  2 2            Profesionales científicos e intelectuales                       
+    ##  3 3            Técnicos y profesionales de nivel medio                         
+    ##  4 4            Personal de apoyo administrativo                                
+    ##  5 5            Trabajadores de los servicios y vendedores de comercios y merca~
+    ##  6 6            Agricultores y trabajadores calificados agropecuarios, forestal~
+    ##  7 7            Oficiales, operarios y artesanos de artes mecánicas y de otros ~
+    ##  8 8            Operadores de instalaciones y máquinas y ensambladores          
+    ##  9 9            Ocupaciones elementales                                         
+    ## 10 0            Ocupaciones militares
+
+``` r
+ciuo_digitos("iricmo")
+```
+
+    ## # A tibble: 9 x 2
+    ##   glosa                                                                  grupo
+    ##   <chr>                                                                  <int>
+    ## 1 Directores y gerentes                                                      1
+    ## 2 Profesionales científicos e intelectuales                                  2
+    ## 3 Técnicos y profesionales de nivel medio                                    3
+    ## 4 Personal de apoyo administrativo                                           4
+    ## 5 Trabajadores de los servicios personales                                   5
+    ## 6 Vendedores                                                                 6
+    ## 7 Oficiales, operarios y artesanos de artes mecánicas y de otros oficios     7
+    ## 8 Operadores de instalaciones y máquinas y ensambladores                     8
+    ## 9 Ocupaciones elementales                                                    9

@@ -1,7 +1,7 @@
 Package: ciiu2012cl
 Type: Package
 Title: Desagregaciones y glosas del Clasificador Internacional Industrial Uniforme 2012 Chile
-Version: 0.2.0
+Version: 0.3.0
 Author: Nicolás Ratto
 Maintainer: Nicolás Ratto <nicolasrattor@gmail.com>
 Description: More about what it does (maybe more than one line)
