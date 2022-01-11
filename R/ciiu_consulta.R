@@ -23,19 +23,19 @@ ciiu_consulta <- function(let=NA_character_,
                  gru=NA_character_,
                  cla=NA_character_,
                  sub=NA_character_){
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(let)){
-    dplyr::filter(base,seccion==let)
+    dplyr::filter(ciiu,seccion==let)
   } else if(!is.na(div)){
-    dplyr::filter(base,division==div)
+    dplyr::filter(ciiu,division==div)
   } else if(!is.na(gru)){
-    dplyr::filter(base,grupo==gru)
+    dplyr::filter(ciiu,grupo==gru)
   } else if(!is.na(cla)){
-    dplyr::filter(base,clase==cla)
+    dplyr::filter(ciiu,clase==cla)
   } else if(!is.na(sub)){
-    dplyr::filter(base,subclase==sub)
+    dplyr::filter(ciiu,subclase==sub)
   } else{
-    base
+    ciiu
   }
 }
 

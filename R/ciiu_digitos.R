@@ -20,23 +20,23 @@
 #' ciiu_digitos(6)
 #'
 ciiu_digitos <- function(digitos=NA_real_){
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(is.na(digitos)){
-    base
+    ciiu
   } else if(digitos==1){
-    base[is.na(base$subclase)&is.na(base$clase)&
-           is.na(base$grupo)&is.na(base$division),c("seccion","glosa")]
+    ciiu[is.na(ciiu$subclase)&is.na(ciiu$clase)&
+           is.na(ciiu$grupo)&is.na(ciiu$division),c("seccion","glosa")]
   } else if(digitos==2){
-    aux <- base[is.na(base$subclase)&is.na(base$clase)&
-           is.na(base$grupo),c("seccion","division","glosa")]
+    aux <- ciiu[is.na(ciiu$subclase)&is.na(ciiu$clase)&
+           is.na(ciiu$grupo),c("seccion","division","glosa")]
     dplyr::filter(aux, !is.na(division))
   } else if(digitos==3){
-    aux <- base[is.na(base$subclase)&is.na(base$clase),c("seccion","grupo","glosa")]
+    aux <- ciiu[is.na(ciiu$subclase)&is.na(ciiu$clase),c("seccion","grupo","glosa")]
     dplyr::filter(aux, !is.na(grupo))
   } else if(digitos==4){
-    base[!is.na(base$clase)&is.na(base$subclase),c("seccion","clase","glosa")]
+    ciiu[!is.na(ciiu$clase)&is.na(ciiu$subclase),c("seccion","clase","glosa")]
   } else if(digitos==5){
-    base[!is.na(base$subclase),c("seccion","subclase","glosa")]
+    ciiu[!is.na(ciiu$subclase),c("seccion","subclase","glosa")]
   } else{
     print("Incorrecto número de digitos. Coloque 1, 2, 3, 4 o 5")
   }

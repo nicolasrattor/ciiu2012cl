@@ -20,25 +20,25 @@ ciiu_glosa <- function(let=NA_character_,
                  cla=NA_character_,
                  sub=NA_character_,
                  buscar=""){
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
-  base$glosa_low <- tolower(base$glosa)
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu$glosa_low <- tolower(ciiu$glosa)
   if(!is.na(let)){
-    aux <- dplyr::filter(base,seccion==let)
+    aux <- dplyr::filter(ciiu,seccion==let)
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   } else if(!is.na(div)){
-    aux <- dplyr::filter(base,division==div)
+    aux <- dplyr::filter(ciiu,division==div)
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   } else if(!is.na(gru)){
-    aux <- dplyr::filter(base,grupo==gru)
+    aux <- dplyr::filter(ciiu,grupo==gru)
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   } else if(!is.na(cla)){
-    aux <- dplyr::filter(base,clase==cla)
+    aux <- dplyr::filter(ciiu,clase==cla)
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   } else if(!is.na(sub)){
-    aux <- dplyr::filter(base,subclase==sub)
+    aux <- dplyr::filter(ciiu,subclase==sub)
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   } else{
-    aux <- base
+    aux <- ciiu
     dplyr::select(dplyr::filter(aux,stringr::str_detect(glosa_low,tolower(buscar))),-"glosa_low")
   }
 }

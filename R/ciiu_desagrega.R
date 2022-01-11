@@ -18,11 +18,11 @@
 
 
 division <- function(letra=NA_character_){
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(letra)){
-    base <- dplyr::filter(dplyr::filter(base,seccion==letra),
+    ciiu <- dplyr::filter(dplyr::filter(ciiu,seccion==letra),
                   is.na(grupo)&is.na(clase)&is.na(subclase)&!is.na(division))
-    base[,c("seccion","division","glosa")]
+    ciiu[,c("seccion","division","glosa")]
   } else{
     print("Agregue sección de CIIU (letra), para conocer sus divisiones")
   }
@@ -33,11 +33,11 @@ division <- function(letra=NA_character_){
 
 grupo <- function(letra=NA_character_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(letra)){
-    base <- dplyr::filter(dplyr::filter(base,seccion==letra),
+    ciiu <- dplyr::filter(dplyr::filter(ciiu,seccion==letra),
                           is.na(clase)&is.na(subclase)&!is.na(grupo))
-    base[,c("seccion","grupo","glosa")]
+    ciiu[,c("seccion","grupo","glosa")]
   } else{
     print("Agregue sección de CIIU (letra), para conocer sus grupos")
   }
@@ -48,11 +48,11 @@ grupo <- function(letra=NA_character_){
 
 clase <- function(letra=NA_character_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(letra)){
-    base <- dplyr::filter(dplyr::filter(base,seccion==letra),
+    ciiu <- dplyr::filter(dplyr::filter(ciiu,seccion==letra),
                           is.na(subclase)&!is.na(clase))
-    base[,c("seccion","clase","glosa")]
+    ciiu[,c("seccion","clase","glosa")]
   } else{
     print("Agregue sección de CIIU (letra), para conocer sus clases")
   }
@@ -62,11 +62,11 @@ clase <- function(letra=NA_character_){
 
 subclase <- function(letra=NA_character_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")
-  base <- base[,c("seccion","division","grupo","clase","subclase","glosa")]
+  ciiu <- ciiu[,c("seccion","division","grupo","clase","subclase","glosa")]
   if(!is.na(letra)){
-    base <- dplyr::filter(dplyr::filter(base,seccion==letra),
+    ciiu <- dplyr::filter(dplyr::filter(ciiu,seccion==letra),
                           !is.na(subclase))
-    base[,c("seccion","subclase","glosa")]
+    ciiu[,c("seccion","subclase","glosa")]
   } else{
     print("Agregue sección de CIIU (letra), para conocer sus subclases")
   }
