@@ -12,9 +12,6 @@
 #'
 #' @examples
 #' division("C")
-#' grupo("C")
-#' clase("C")
-#' subclase("C")
 
 
 division <- function(letra=NA_character_){
@@ -29,6 +26,19 @@ division <- function(letra=NA_character_){
 }
 
 
+#' Buscar desagregaciones CIIU 2012 dentro de letras
+#'
+#' Cuatro funciones que retornas divisiones, grupos, clases o subclases dentro de una sección o letra de CIIU 2012.cl
+#'
+#'
+#'
+#'
+#' @param letra Sección a desagregar. Como carácter.
+#' @return Tabla con número de la desagregación buscada y glosa
+#' @export
+#'
+#' @examples
+#' grupo("C")
 
 
 grupo <- function(letra=NA_character_){
@@ -44,7 +54,19 @@ grupo <- function(letra=NA_character_){
 }
 
 
-
+#' Buscar desagregaciones CIIU 2012 dentro de letras
+#'
+#' Cuatro funciones que retornas divisiones, grupos, clases o subclases dentro de una sección o letra de CIIU 2012.cl
+#'
+#'
+#'
+#'
+#' @param letra Sección a desagregar. Como carácter.
+#' @return Tabla con número de la desagregación buscada y glosa
+#' @export
+#'
+#' @examples
+#' clase("C")
 
 clase <- function(letra=NA_character_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")
@@ -58,7 +80,19 @@ clase <- function(letra=NA_character_){
   }
 }
 
-
+#' Buscar desagregaciones CIIU 2012 dentro de letras
+#'
+#' Cuatro funciones que retornas divisiones, grupos, clases o subclases dentro de una sección o letra de CIIU 2012.cl
+#'
+#'
+#'
+#'
+#' @param letra Sección a desagregar. Como carácter.
+#' @return Tabla con número de la desagregación buscada y glosa
+#' @export
+#'
+#' @examples
+#' subclase("C")
 
 subclase <- function(letra=NA_character_){
   load("~/Github/ciiu2012cl/R/sysdata.rda")

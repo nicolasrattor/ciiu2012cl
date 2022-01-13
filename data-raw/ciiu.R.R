@@ -5,3 +5,5 @@ ciiu <- janitor::clean_names(readxl::read_excel("data-raw/CIIU4.CL 2012.xlsx",sk
 ciuo <- janitor::clean_names(readxl::read_excel("data-raw/Clasificador Chileno de Ocupaciones CIUO 08.CL(excel)NO MODIFICAR.xls",skip=1))
 
 usethis::use_data(ciuo, ciiu, internal = TRUE, overwrite = TRUE)
+
+usethis::use_data(ciuo, ciiu)
