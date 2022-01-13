@@ -12,10 +12,23 @@ ciiu_consulta(
   sub = NA_character_
 )
 }
+\arguments{
+\item{let}{letra}
+
+\item{dev}{division}
+}
 \value{
-A matrix of the infile
+Matriz
 }
 \description{
 La función retorna todos los elementos contenidos en la desagregación
 consultada. Se puede filtrar por letra, división, grupo, clase o subclase
+}
+\examples{
+ciiu_consulta()
+ciiu_consulta("G")
+ciiu_consulta(div="47")
+ciiu_consulta(gru="472")
+ciiu_consulta(cla="4719")
+ciiu_consulta(sub="47199")
 }

@@ -10,6 +10,14 @@
 #' @return Una tibble con las glosas según desglose solicitado
 #' @export
 #'
+#' @examples
+#'ciuo_digitos()
+#'ciuo_digitos("iricmo")
+#'ciuo_digitos(1)
+#'ciuo_digitos(2)
+#'ciuo_digitos(3)
+#'ciuo_digitos(4)
+#'ciuo_digitos(5)
 
 ciuo_digitos <- function(digitos=NA_real_){
   if(is.na(digitos)){
@@ -40,10 +48,3 @@ ciuo_digitos <- function(digitos=NA_real_){
   }
 }
 
-ciuo_digitos()
-ciuo_digitos("iricmo")
-ciuo_digitos(1)
-ciuo_digitos(2)
-ciuo_digitos(3)
-ciuo_digitos(4)
-ciuo_digitos(5)

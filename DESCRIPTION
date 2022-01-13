@@ -4,9 +4,8 @@ Title: Desagregaciones y glosas del Clasificador Internacional Industrial Unifor
 Version: 0.3.0
 Author: Nicolás Ratto
 Maintainer: Nicolás Ratto <nicolasrattor@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: Acceso y fácil manipulación del CIIU2012cl y CIUO-08
+License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

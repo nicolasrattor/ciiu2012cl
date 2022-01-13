@@ -6,11 +6,12 @@
 #'
 #'
 #'
-#' @param letra
-#' @return A matrix of the infile
+#' @param let letra
+#' @param dev division
+#' @return Matriz
 #' @export
 #'
-#' #' @examples
+#' @examples
 #' ciiu_consulta()
 #' ciiu_consulta("G")
 #' ciiu_consulta(div="47")

@@ -108,6 +108,32 @@ subclase <- function(letra=NA_character_){
 
 
 
+#' Buscar desagregaciones CIIU 2012 dentro de letras
+#'
+#' Entrega glosa de la seccion
+#'
+#'
+#'
+#'
+#' @param letra Sección a desagregar. Como carácter.
+#' @return Tabla con número de la desagregación buscada y glosa
+#' @export
+#'
+#' @examples
+#' seccion("C")
+
+
+seccion <- function(letra=NA_character_){
+  if(!is.na(letra)){
+    ciiu <- dplyr::filter(dplyr::filter(ciiu,seccion==letra),is.na(division))
+    ciiu$glosa
+  } else{
+    print("Agregue sección de CIIU (letra), para conocer sus divisiones")
+  }
+}
+
+
+
 
 
 

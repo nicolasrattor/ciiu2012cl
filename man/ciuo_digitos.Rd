@@ -16,3 +16,12 @@ Una tibble con las glosas según desglose solicitado
 La función retorna todos los elementos contenidos en la desagregación
 consultada. Con valor "iricmo" en argumento digitos retorna glosas IRICMO.
 }
+\examples{
+ciuo_digitos()
+ciuo_digitos("iricmo")
+ciuo_digitos(1)
+ciuo_digitos(2)
+ciuo_digitos(3)
+ciuo_digitos(4)
+ciuo_digitos(5)
+}
